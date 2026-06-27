@@ -331,9 +331,9 @@ const PROBLEM_ITEMS = {
   en: [
     { icon: 'doc',       title: 'You produce content', desc: 'but sales stay flat' },
     { icon: 'megaphone', title: 'You run ads', desc: 'but cost per customer climbs every month' },
-    { icon: 'palette',   title: 'You design an identity', desc: 'but the market doesn’t remember you' },
-    { icon: 'barChart',  title: 'You collect data', desc: 'but you don’t know what to do with it' },
-    { icon: 'building',  title: 'You pay an agency', desc: 'but you don’t know where the money goes' }
+    { icon: ‘palette’,   title: ‘You design an identity’, desc: "but the market doesn’t remember you" },
+    { icon: ‘barChart’,  title: ‘You collect data’, desc: "but you don’t know what to do with it" },
+    { icon: ‘building’,  title: ‘You pay an agency’, desc: "but you don’t know where the money goes" }
   ]
 };
 
