@@ -563,7 +563,8 @@ function applyLang(l) {
     if (t[k] !== undefined) el.title = t[k];
   });
   renderDynamic(l);
-  document.getElementById('auth-n-1').innerHTML = l === 'ar' ? '90<em> يوم</em>' : '90<em> Days</em>';
+  const authN1 = document.getElementById('auth-n-1');
+  if (authN1) authN1.innerHTML = l === 'ar' ? '90<em> يوم</em>' : '90<em> Days</em>';
   localStorage.setItem('rathib_lang', l);
   if (typeof initScrollAnimations === 'function') initScrollAnimations();
 }
