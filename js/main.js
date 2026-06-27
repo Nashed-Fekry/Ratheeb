@@ -159,7 +159,7 @@ const I = {
     about_stat1: 'in the Gulf', about_stat2: 'in Egypt', about_stat3: 'in Morocco',
     founder_name: '[Founder Name]', founder_title: 'Founder & CEO',
     founder_bio: '7+ years of experience growing revenue for Gulf brands',
-    founder_quote: “\”We trust what we tell our clients — because we've lived it with every brand we've worked with.\””,
+    founder_quote: "\"We trust what we tell our clients — because we've lived it with every brand we've worked with.\"",
     founder_cite: '— Rathib Founder',
     port_label: 'Work', port_title: 'Our Featured Work', port_all: 'View All Projects',
     consult_badge: 'Free Consultation', consult_title: 'Book a Free Consultation Now',
