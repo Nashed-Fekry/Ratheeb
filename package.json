@@ -1,0 +1,13 @@
+{
+  "name": "rathib-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Rathib landing page — static site with an image optimization tool.",
+  "type": "module",
+  "scripts": {
+    "optimize": "node scripts/optimize-images.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}

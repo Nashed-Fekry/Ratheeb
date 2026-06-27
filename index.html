@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>راثيب — شريك هندسة الإيراد</title>
+<meta name="description" content="راثيب لا تبيع خدمات تسويق. راثيب تبني أنظمة نمو تحوّل الإنفاق التسويقي إلى إيراد قابل للقياس.">
+<!-- Google Analytics 4 — استبدل GA_MEASUREMENT_ID بـ G-XXXXXXXXXX الخاص بك -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Brand-spec fonts: Bebas Neue + Barlow (EN) · Cairo + Almarai + Tajawal (AR) -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Barlow+Condensed:wght@500;600;700;800&family=Cairo:wght@400;500;600;700;800;900&family=Almarai:wght@400;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div id="progress-bar"></div>
+
+<!-- Cinematic FX overlays (dark theme only) -->
+<div class="fx-vignette" aria-hidden="true"></div>
+<div class="fx-grain" aria-hidden="true"></div>
+
+<!-- Mobile Sticky CTA -->
+<a href="#form-section" class="mobile-cta" data-i18n="nav_cta">احجز تقييم النمو</a>
+
+<!-- ═══════════════════ NAV -->
+<nav class="nav" id="main-nav">
+  <a href="#" class="nav-logo">
+    <img src="images/rathib-logo-3d-BRIiutFj.webp" alt="راثيب" class="nav-logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about" data-i18n="nav_about">من نحن</a></li>
+    <li><a href="#portfolio" data-i18n="nav_portfolio">الأعمال</a></li>
+    <li><a href="#problem" data-i18n="nav_problem">المشكلة</a></li>
+    <li><a href="#framework" data-i18n="nav_framework">المنهجية</a></li>
+    <li><a href="#proof" data-i18n="nav_proof">النتائج</a></li>
+    <li><a href="#faq" data-i18n="nav_faq">الأسئلة</a></li>
+  </ul>
+  <div class="nav-controls">
+    <button class="ctrl-btn" id="lang-btn" onclick="toggleLang()">EN</button>
+    <button class="ctrl-btn" id="theme-btn" onclick="toggleTheme()" title="Toggle theme">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="theme-icon-dark">
+        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="theme-icon-light" style="display:none">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+    <!-- Burger — visible only on mobile -->
+    <button class="burger" id="burger-btn" aria-label="القائمة" onclick="toggleDrawer()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════ MOBILE DRAWER -->
+<div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+  <div class="drawer-backdrop" onclick="closeDrawer()"></div>
+  <div class="drawer-panel">
+    <div class="drawer-head">
+      <a href="#home" class="nav-logo" onclick="closeDrawer()">
+        <span>راثيب</span>
+        <span class="en-sub">RATHIB</span>
+      </a>
+      <button class="ctrl-btn" onclick="closeDrawer()" aria-label="إغلاق">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="#about"      onclick="closeDrawer()" data-i18n="nav_about">من نحن</a></li>
+      <li><a href="#portfolio"  onclick="closeDrawer()" data-i18n="nav_portfolio">الأعمال</a></li>
+      <li><a href="#problem"    onclick="closeDrawer()" data-i18n="nav_prob">المشكلة</a></li>
+      <li><a href="#comparison" onclick="closeDrawer()" data-i18n="nav_comp">المقارنة</a></li>
+      <li><a href="#framework"  onclick="closeDrawer()" data-i18n="nav_framework">المنهجية</a></li>
+      <li><a href="#outcomes"   onclick="closeDrawer()" data-i18n="nav_out">التحولات</a></li>
+      <li><a href="#proof"      onclick="closeDrawer()" data-i18n="nav_proof">النتائج</a></li>
+      <li><a href="#faq"        onclick="closeDrawer()" data-i18n="nav_faq">الأسئلة</a></li>
+    </ul>
+    <div class="drawer-cta">
+      <a href="#form-section" class="btn btn-primary" onclick="closeDrawer()" data-i18n="hero_cta_1">احجز تقييم النمو المجاني ←</a>
+    </div>
+    <div class="drawer-controls">
+      <button class="ctrl-btn" onclick="toggleLang(); closeDrawer()" id="drawer-lang-btn">EN</button>
+      <button class="ctrl-btn" onclick="toggleTheme()">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ SOCIAL RAIL -->
+<div class="social-rail" aria-label="روابط التواصل الاجتماعي">
+  <a href="https://www.facebook.com/profile.php?id=61579585354757" target="_blank" rel="noopener noreferrer" class="social-rail-btn" aria-label="Facebook">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+  </a>
+  <a href="https://www.instagram.com/rathib.club/" target="_blank" rel="noopener noreferrer" class="social-rail-btn" aria-label="Instagram">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+  </a>
+</div>
+
+<!-- ═══════════════════ FLOATING WHATSAPP -->
+<a href="https://wa.me/971503110244?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D9%85%D9%87%D8%AA%D9%85%20%D8%A8%D9%85%D8%B9%D8%B1%D9%81%D8%A9%20%D8%A7%D9%84%D9%85%D8%B2%D9%8A%D8%AF%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%B1%D8%A7%D8%AB%D9%8A%D8%A8"
+   class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="تواصل عبر واتساب" data-i18n-title="wa_title" title="تواصل معنا على واتساب">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.733-.979zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<!-- ═══════════════════ HERO -->
+<section class="hero" id="home">
+  <div class="hero-wrap">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          <span data-i18n="hero_eyebrow">شريك هندسة الإيراد</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="muted" data-i18n="hero_dim">توقّف عن شراء التسويق</span>
+          <span class="accent" data-i18n="hero_accent">ابدأ بناء نظام الإيراد</span>
+        </h1>
+        <p class="hero-sub" data-i18n="hero_sub">راثيب لا تبيع باقات تسويق. راثيب تصمم هياكل نمو تحوّل كل جنيه في الإعلانات والمحتوى إلى إيراد قابل للقياس — لأصحاب البزنسات الجادين الذين يريدون شريكاً لا مورّداً.</p>
+        <div class="hero-cta-group">
+          <a href="#form-section" class="btn btn-primary btn-lg" data-i18n="hero_cta_1">احجز تقييم النمو المجاني ←</a>
+          <a href="#framework" class="btn btn-outline btn-lg" data-i18n="hero_cta_2">اكتشف كيف نعمل</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-logo-orbit">
+          <div class="hero-orbit-glow"></div>
+          <div class="hero-orbit-ring hero-orbit-ring--outer"></div>
+          <div class="hero-orbit-ring hero-orbit-ring--inner"></div>
+          <div class="hero-orbit-logo">
+            <img src="images/rathib-logo-3d-BRIiutFj.webp" alt="شعار راثب" loading="eager">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-n">119</div>
+        <div class="hero-stat-l" data-i18n="stat_brands">براند ناجح</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">2018</div>
+        <div class="hero-stat-l" data-i18n="stat_since">منذ عام</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">7.3<sup>x</sup></div>
+        <div class="hero-stat-l" data-i18n="stat_roas">متوسط ROAS</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">18<sup>%</sup></div>
+        <div class="hero-stat-l" data-i18n="stat_conv">معدل التحويل</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ TICKER -->
+<div class="ticker" dir="ltr">
+  <div class="ticker-track" id="ticker-track"></div>
+</div>
+
+<!-- ═══════════════════ ABOUT -->
+<section class="about-section section" id="about">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label" data-i18n="about_label">الفريق خلف النتائج</div>
+      <h2 class="section-heading" data-i18n="about_title">نحن لا نبيع خدمات —<br>نحن نبني <span>شراكات</span></h2>
+    </div>
+    <div class="about-layout">
+      <div class="about-text reveal">
+        <p class="about-p" data-i18n="about_p1">راثيب بدأت في الإمارات عام 2018 بفكرة بسيطة: إن صاحب البزنس يستحق شريكاً يفهم أرقامه ويتحمل معه مسؤولية النتيجة — لا مورد يبيع باقات ويختفي.</p>
+        <p class="about-p" data-i18n="about_p2">اليوم نعمل مع براندات في الإمارات ومصر، ونتوسع في السوق المصري بنفس المنهجية التي حوّلت DHG من 30 ألف إلى 380 ألف درهم في شهر واحد.</p>
+        <div class="about-stats">
+          <div class="about-stat">
+            <span class="about-stat-num">119</span>
+            <span class="about-stat-label" data-i18n="about_stat1">في الخليج</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-num">33</span>
+            <span class="about-stat-label" data-i18n="about_stat2">في مصر</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-num">18</span>
+            <span class="about-stat-label" data-i18n="about_stat3">في المغرب</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PROBLEM -->
+<section class="problem-section section" id="problem">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label" data-i18n="prob_label">المشكلة الحقيقية</div>
+      <h2 class="section-heading" data-i18n="prob_title">لماذا تشتري التسويق<br>ولا تشتري <span>النمو</span>؟</h2>
+      <p class="section-subtext" data-i18n="prob_sub">معظم البزنسات تشتري خدمات منفصلة بدون منظومة. النتيجة إنفاق بلا عائد واضح.</p>
+    </div>
+    <div class="problem-layout">
+      <ul class="problem-list" id="problem-list"></ul>
+      <div class="stats-card stagger-children">
+        <div class="stat-row sc-item">
+          <div class="stat-num"><em>70</em>%</div>
+          <div class="stat-desc" data-i18n="prob_stat_1">من الشركات تقيس نجاحها بالشكل والمشاهدات والإعجابات، بينما المبيعات لا تتحرك بالسرعة التي تستحقها</div>
+        </div>
+        <div class="stat-row sc-item">
+          <div class="stat-num"><em>2</em>×</div>
+          <div class="stat-desc" data-i18n="prob_stat_2">زيادة الميزانية الإعلانية قبل فهم المشكلة الحقيقية قد تضاعف الخسائر بدلًا من الأرباح</div>
+        </div>
+        <div class="stat-row sc-item">
+          <div class="stat-num"><em>∞</em></div>
+          <div class="stat-desc" data-i18n="prob_stat_3">أكبر خسارة في التسويق ليست المال الذي يُصرف، بل العملاء والفرص التي تضيع بسبب غياب نظام نمو واضح</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ COMPARISON -->
+<section class="section" id="comparison" style="background: var(--bg-2);">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label" data-i18n="comp_label">وكالة مقابل شريك</div>
+      <h2 class="section-heading" data-i18n="comp_title">أي وكالة تستطيع تنفيذ المهام<br>لكن قليلون من يبنون <span>نظامًا يحقق نموًا حقيقيًا</span></h2>
+    </div>
+    <div class="comparison-grid reveal reveal-delay-1" id="comp-grid">
+      <div class="comp-col standard" id="comp-standard"></div>
+      <div class="comp-divider"><div class="vs-badge">VS</div></div>
+      <div class="comp-col rathib" id="comp-rathib"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ SPEND-VS-GROWTH BANNER -->
+<section class="sg-banner" id="spend-growth">
+  <div class="container">
+    <p class="sg-banner-text reveal" data-i18n="sg_banner">الفرق بين الإنفاق والنمو ليس في الميزانية… بل في <span>النظام الذي يديرها</span>.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════ FRAMEWORK -->
+<section class="framework-section section" id="framework">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label" data-i18n="fw_label">المنهجية</div>
+      <h2 class="section-heading" data-i18n="fw_title">خمس خطوات تفصل بين<br>الإنفاق و<span>النمو الحقيقي</span></h2>
+    </div>
+    <div class="fw-steps" id="fw-steps"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════ MEDIA PRODUCTION -->
+<section class="mp-section section" id="media-production">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label" data-i18n="mp_label">الميديا برودكشن</div>
+      <h2 class="section-heading" data-i18n="mp_title">لا نبيع منشورات وإعلانات<br>بل <span>نبني نظامًا يحوّل الإنفاق إلى إيرادات</span></h2>
+    </div>
+
+    <div class="mp-marquee reveal reveal-delay-1" id="mp-marquee">
+      <div class="mp-marquee-track" id="mp-track">
+        <div class="mp-slide"><img src="images/production/prod-1.webp" alt="من كواليس إنتاج راثيب" loading="eager" decoding="async"></div>
+        <div class="mp-slide"><img src="images/production/prod-2.webp" alt="من كواليس إنتاج راثيب" loading="eager" decoding="async"></div>
+        <div class="mp-slide"><img src="images/production/prod-3.webp" alt="من كواليس إنتاج راثيب" loading="eager" decoding="async"></div>
+        <div class="mp-slide"><img src="images/production/prod-4.webp" alt="من كواليس إنتاج راثيب" loading="eager" decoding="async"></div>
+        <div class="mp-slide"><img src="images/production/prod-5.webp" alt="من كواليس إنتاج راثيب" loading="eager" decoding="async"></div>
+        <div class="mp-slide"><img src="images/production/prod-6.webp" alt="من كواليس إنتاج راثيب" loading="eager" decoding="async"></div>
+        <div class="mp-slide"><img src="images/production/prod-7.webp" alt="من كواليس إنتاج راثيب" loading="eager" decoding="async"></div>
+        <div class="mp-slide"><img src="images/production/prod-8.webp" alt="من كواليس إنتاج راثيب" loading="eager" decoding="async"></div>
+        <div class="mp-slide"><img src="images/production/prod-9.webp" alt="من كواليس إنتاج راثيب" loading="eager" decoding="async"></div>
+      </div>
+      <div class="mp-fade mp-fade-start" aria-hidden="true"></div>
+      <div class="mp-fade mp-fade-end" aria-hidden="true"></div>
+    </div>
+
+    <div class="mp-points reveal reveal-delay-2">
+      <div class="mp-point"><span class="mp-point-icon">✓</span><span data-i18n="mp_p1">محتوى مصمم لبناء الثقة وتحويل المتابع إلى عميل.</span></div>
+      <div class="mp-point"><span class="mp-point-icon">✓</span><span data-i18n="mp_p2">كل جنيه يُنفَق له هدف واضح وخطة لتحسين عائده.</span></div>
+      <div class="mp-point"><span class="mp-point-icon">✓</span><span data-i18n="mp_p3">إطلاق مبني على خطة واضحة تقلل المخاطر وتسرّع الوصول إلى الربحية.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ INDUSTRIES -->
+<section class="industries-section section" id="industries">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label" data-i18n="ind_label">القطاعات</div>
+      <h2 class="section-heading" data-i18n="ind_title">نتخصص حيث يصعب <span>التعميم</span></h2>
+      <p class="section-subtext" data-i18n="ind_sub">لكل قطاع لغته ومنطقه وجمهوره. نجاح راثيب مبني على العمق لا الاتساع.</p>
+    </div>
+    <div class="industries-grid" id="ind-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CASE STUDY (DHG) -->
+<section class="case-section section" id="case-study">
+  <div class="container">
+    <div class="case-card reveal">
+      <div class="case-badge" data-i18n="case_badge">تحليل حقيقي · موثّق بالأرقام</div>
+      <h2 class="case-title" data-i18n="case_title">من 30,000 إلى 380,000 درهم<br>في 30 يوماً فقط</h2>
+      <p class="case-meta" data-i18n="case_meta">أكاديمية DHG الرياضية — أبوظبي، الإمارات · قطاع: أكاديميات رياضية للأطفال</p>
+
+      <div class="case-stats">
+        <div class="case-stat case-stat--before">
+          <span class="case-stat-l" data-i18n="case_before_l">قبل راثيب</span>
+          <span class="case-stat-n">30,000</span>
+          <span class="case-stat-s" data-i18n="case_unit">درهم / شهر</span>
+        </div>
+        <div class="case-stat case-stat--growth">
+          <span class="case-stat-l" data-i18n="case_growth_l">نمو المبيعات</span>
+          <span class="case-stat-n">1,167<sup>%</sup></span>
+          <span class="case-stat-s" data-i18n="case_growth_s">في شهر واحد</span>
+        </div>
+        <div class="case-stat case-stat--after">
+          <span class="case-stat-l" data-i18n="case_after_l">بعد راثيب</span>
+          <span class="case-stat-n">380,000</span>
+          <span class="case-stat-s" data-i18n="case_unit">درهم / شهر</span>
+        </div>
+      </div>
+
+      <div class="case-did">
+        <h3 class="case-did-title" data-i18n="case_did_title">ما الذي فعلناه بالضبط</h3>
+        <ul class="case-did-list">
+          <li data-i18n="case_did_1">بنينا استراتيجية محتوى كاملة مبنية على احتياجات الآباء في أبوظبي — لا على افتراضات</li>
+          <li data-i18n="case_did_2">أدرنا حملات Meta Ads بـ targeting دقيق يستهدف الآباء في المنطقة الجغرافية الصحيحة</li>
+          <li data-i18n="case_did_3">أنتجنا محتوى فيديو يُظهر تجربة الأطفال الفعلية داخل الأكاديمية — يبني ثقة فورية</li>
+          <li data-i18n="case_did_4">ربطنا الإعلانات بـ funnel مبيعات واضح — من أول ظهور للإعلان حتى تسجيل الطفل</li>
+        </ul>
+      </div>
+
+      <blockquote class="case-quote">
+        <p data-i18n="case_quote">"راثيب مش وكالة تسويق عادية — هم شركاء نمو حقيقيون. في شهر واحد شفنا أرقام ما كنا نتوقعها في سنة كاملة."</p>
+        <cite data-i18n="case_cite">إدارة أكاديمية DHG — أبوظبي</cite>
+      </blockquote>
+
+      <div class="case-cta">
+        <p data-i18n="case_cta_q">بزنسك التالي في قائمة التحولات؟</p>
+        <a href="#form-section" class="btn btn-primary btn-lg" data-i18n="hero_cta_1">احجز تقييم النمو المجاني ←</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CASE STUDY 2 (MCOCCO) -->
+<section class="case-section section" id="case-study-2">
+  <div class="container">
+    <div class="case-card case-card--gold reveal">
+      <div class="case-badge case-badge--gold" data-i18n="case2_badge">كافيه سبيشالتي · دبي</div>
+      <h2 class="case-title" data-i18n="case2_title">Mcocco Coffee —<br>استهداف الـ 1% في دبي</h2>
+      <p class="case-meta" data-i18n="case2_meta">كافيه سبيشالتي يستهدف الفئة الأكثر إنفاقاً في سوق دبي</p>
+
+      <div class="case-stats">
+        <div class="case-stat">
+          <span class="case-stat-l" data-i18n="case2_stat1_l">الإنفاق التسويقي</span>
+          <span class="case-stat-n">18,000</span>
+          <span class="case-stat-s" data-i18n="case2_stat1_s">درهم — كامبين كامل</span>
+        </div>
+        <div class="case-stat case-stat--gold-highlight">
+          <span class="case-stat-l" data-i18n="case2_stat2_l">العائد على الإنفاق</span>
+          <span class="case-stat-n">11x</span>
+          <span class="case-stat-s" data-i18n="case2_stat2_s">ROAS موثّق</span>
+        </div>
+        <div class="case-stat">
+          <span class="case-stat-l" data-i18n="case2_stat3_l">المبيعات المحققة</span>
+          <span class="case-stat-n">200,000</span>
+          <span class="case-stat-s" data-i18n="case2_stat3_s">درهم</span>
+        </div>
+      </div>
+
+      <div class="case-cta">
+        <p data-i18n="case_cta_q">بزنسك التالي في قائمة التحولات؟</p>
+        <a href="#form-section" class="btn btn-primary btn-lg" data-i18n="hero_cta_1">احجز تقييم النمو المجاني ←</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ OUTCOMES -->
+<section class="outcomes-section section" id="outcomes">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label" data-i18n="out_label">التحولات الفعلية</div>
+      <h2 class="section-heading" data-i18n="out_title">لا نبيع خدمات<br>نصنع <span>تحولات</span></h2>
+    </div>
+    <div class="outcomes-grid" id="outcomes-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════ AUTHORITY -->
+<section class="authority-section section" id="authority">
+  <div class="container">
+    <div class="authority-grid">
+      <div class="authority-visual reveal">
+        <div class="authority-visual-glow"></div>
+        <img class="authority-helmet" src="images/RATHIB_files/layer4-DRIdeC5_.webp" alt="" aria-hidden="true" loading="lazy">
+      </div>
+      <div class="authority-inner">
+      <p class="authority-quote reveal" data-i18n="auth_quote">
+        نحن لا نبيع لك <strong>خدمة تسويق</strong>.<br>
+        نحن نبني معك <strong>هيكل إيراد</strong> — منهجية واضحة، أرقام موثقة، ومسؤولية حقيقية عن النتيجة.
+      </p>
+      <div class="authority-numbers">
+        <div class="auth-num-card reveal reveal-delay-1">
+          <div class="auth-num-value is-text" data-i18n="auth_2_t">نتائجنا تتكلم عننا</div>
+          <div class="auth-num-label" data-i18n="auth_2">نهتم بكل جوانب البزنس من الألف إلى الياء، ونوفّر عليك وقت التفكير والبحث عن الحلول — بل نحن من نوفّرها لك.</div>
+        </div>
+        <div class="auth-num-card reveal reveal-delay-2">
+          <div class="auth-num-value">100<em>%</em></div>
+          <div class="auth-num-label" data-i18n="auth_3">من القرارات مبنية على بيانات لا افتراضات</div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PROOF -->
+<section class="proof-section section" id="proof">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label" data-i18n="proof_label">ما يقوله عملاؤنا</div>
+      <h2 class="section-heading" data-i18n="proof_title">النتائج <span>تتكلم</span></h2>
+    </div>
+    <div class="proof-grid" id="proof-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="faq-inner">
+      <div class="reveal">
+        <div class="section-label" data-i18n="faq_label">الاعتراضات الشائعة</div>
+        <h2 class="section-heading" data-i18n="faq_title">إجابات صريحة على<br><span>الأسئلة الحقيقية</span></h2>
+      </div>
+      <div class="faq-list reveal reveal-delay-1" id="faq-list"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ QUALIFICATION -->
+<section class="qual-section section" id="qualify">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label" data-i18n="qual_label">من نعمل معه</div>
+      <h2 class="section-heading" data-i18n="qual_title">راثيب ليست للجميع<br>وهذا ما يميّز <span>نتائجنا</span></h2>
+    </div>
+    <div class="qual-layout">
+      <div class="reveal reveal-delay-1">
+        <p class="qual-heading ideal" data-i18n="qual_ideal_title">العميل المثالي لراثيب</p>
+        <ul class="qual-list" id="qual-ideal"></ul>
+        <p class="qual-heading avoid" data-i18n="qual_avoid_title">لا نعمل مع ✗</p>
+        <ul class="qual-list" id="qual-avoid"></ul>
+      </div>
+      <div class="qual-cta-card reveal reveal-delay-2">
+        <div class="qual-cta-card-visual">
+          <img src="images/RATHIB_files/layer13-Uklngq-D.webp" class="qual-trophy" alt="Trophy">
+          <div>
+            <div class="qual-cta-title" data-i18n="qual_box_title">الشراكة الجادة تبدأ بتقييم حقيقي</div>
+            <p class="qual-cta-desc" data-i18n="qual_box_desc">لا نرسل عروض أسعار قبل أن نفهم بزنسك كاملاً. كل proposal مكتوب لعميل واحد. التقييم مجاني وبدون أي التزام.</p>
+          </div>
+        </div>
+        <a href="#form-section" class="btn btn-gold" style="width:100%; justify-content:center; display:flex;" data-i18n="qual_cta">احجز تقييم النمو المجاني ←</a>
+        <p class="qual-note" data-i18n="qual_note">مكالمة 25 دقيقة لفهم البزنس الخاص بك ومعرفة مشاكلك والتعرّف على تفاصيله الكاملة</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CTA BRIDGE -->
+<div class="cta-bridge">
+  <img class="bridge-car reveal" src="images/RATHIB_files/layer10-4Biuebv0.webp" alt="" aria-hidden="true" loading="lazy">
+  <div class="cta-bridge-inner reveal reveal-delay-2">
+    <span class="bridge-eyebrow" data-i18n="bridge_eyebrow">WHERE IDEAS TAKE FLIGHT</span>
+    <h2 class="cta-bridge-title" data-i18n="bridge_title">لنرَ إن كنّا الاختيار الصحيح لبعضنا</h2>
+    <p class="cta-bridge-desc" data-i18n="bridge_desc">لا نعمل مع الجميع — ونفتخر بذلك. تقييم النمو مجاني ومصمم ليجيب على سؤال واحد: هل راثيب هي الشريك الذي يحتاجه بزنسك الآن؟</p>
+    <a href="#form-section" class="btn btn-primary btn-lg" data-i18n="bridge_cta">أكمل تقييم النمو ←</a>
+    <p class="cta-note" data-i18n="bridge_note">الاستمارة تستغرق 7 دقائق · لا رسوم · لا التزام</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ FORM -->
+<section class="form-section" id="form-section">
+  <div class="container">
+    <div class="form-container reveal">
+      <div class="form-header">
+        <div class="form-header-title" data-i18n="form_title">تقييم نمو البزنس</div>
+        <p class="form-header-sub" data-i18n="form_sub">كل إجابة تساعدنا نفهم بزنسك ونحدد الفرص الحقيقية لنموه</p>
+      </div>
+      <div class="form-progress">
+        <div class="step-dots" id="step-dots"></div>
+        <span class="step-counter-text" id="step-counter">1 / 9</span>
+      </div>
+      <div class="form-progress-bar-track">
+        <div class="form-progress-bar-fill" id="progress-fill" style="width:11.1%"></div>
+      </div>
+
+      <div class="form-body">
+        <!-- Step 1 -->
+        <div class="form-step active" id="step-1">
+          <div class="step-title" data-i18n="s1_title">بياناتك الشخصية</div>
+          <p class="step-desc" data-i18n="s1_sub">سنتواصل معك على هذه البيانات لتحديد موعد مكالمة التقييم</p>
+          <div class="field-grid">
+            <div class="field">
+              <label class="field-label"><span data-i18n="s1_name">الاسم بالكامل</span> <em>*</em></label>
+              <input class="field-input" type="text" id="f-name" data-i18n-ph="s1_name_ph" placeholder="الاسم الأول والأخير" required>
+            </div>
+            <div class="field">
+              <label class="field-label"><span data-i18n="s1_phone">رقم الهاتف</span> <em>*</em></label>
+              <input class="field-input" type="tel" id="f-phone" data-i18n-ph="s1_phone_ph" placeholder="01xxxxxxxxx" required>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field-label" data-i18n="s1_email">البريد الإلكتروني</label>
+            <input class="field-input" type="email" id="f-email" placeholder="email@example.com">
+          </div>
+          <div class="field">
+            <label class="field-label"><span data-i18n="s1_brand">اسم البراند / النشاط التجاري</span> <em>*</em></label>
+            <input class="field-input" type="text" id="f-brand" data-i18n-ph="s1_brand_ph" placeholder="ما هو اسم بزنسك؟" required>
+          </div>
+          <div class="form-nav">
+            <span class="step-pos">1 / 9</span>
+            <button class="btn-form-next" onclick="nextStep(1)"><span data-i18n="btn_next">التالي</span> →</button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="form-step" id="step-2">
+          <div class="step-title" data-i18n="s2_title">معلومات عن البزنس</div>
+          <p class="step-desc" data-i18n="s2_sub">نريد أن نفهم طبيعة نشاطك وحضوره الرقمي</p>
+          <div class="field">
+            <label class="field-label"><span data-i18n="s2_sector">القطاع</span> <em>*</em></label>
+            <div class="radio-group" id="rad-industry">
+              <label class="radio-label"><input type="radio" name="industry" value="مطاعم وكافيهات"><div class="radio-dot"></div><span data-i18n="ind_1">مطاعم وكافيهات</span></label>
+              <label class="radio-label"><input type="radio" name="industry" value="فاشون"><div class="radio-dot"></div><span data-i18n="ind_3">فاشون وملابس</span></label>
+              <label class="radio-label"><input type="radio" name="industry" value="ريتيل"><div class="radio-dot"></div><span data-i18n="ind_4">ريتيل وتجزئة</span></label>
+              <label class="radio-label"><input type="radio" name="industry" value="عقارات"><div class="radio-dot"></div><span data-i18n="ind_7">عقارات</span></label>
+              <label class="radio-label"><input type="radio" name="industry" value="خدمات"><div class="radio-dot"></div><span data-i18n="ind_5">خدمات مهنية</span></label>
+              <label class="radio-label"><input type="radio" name="industry" value="أخرى"><div class="radio-dot"></div><span data-i18n="ind_6">أخرى</span></label>
+            </div>
+          </div>
+          <input type="hidden" id="f-interest">
+          <div class="field-grid">
+            <div class="field">
+              <label class="field-label" data-i18n="s2_years">منذ متى البزنس شغّال؟</label>
+              <select class="field-select" id="f-years">
+                <option value="" data-i18n="select_placeholder">اختر...</option>
+                <option data-i18n="yr_1">أقل من سنة</option>
+                <option data-i18n="yr_2">1 - 3 سنوات</option>
+                <option data-i18n="yr_3">3 - 5 سنوات</option>
+                <option data-i18n="yr_4">أكثر من 5 سنوات</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field-label" data-i18n="s2_branches">عدد الفروع</label>
+              <select class="field-select" id="f-branches">
+                <option value="" data-i18n="select_placeholder">اختر...</option>
+                <option data-i18n="br_1">فرع واحد</option>
+                <option data-i18n="br_2">2 - 5 فروع</option>
+                <option data-i18n="br_3">6 - 15 فرع</option>
+                <option data-i18n="br_4">أكثر من 15</option>
+              </select>
+            </div>
+          </div>
+          <div class="field-grid">
+            <div class="field">
+              <label class="field-label" data-i18n="s2_ig">لينك الإنستجرام</label>
+              <input class="field-input" type="text" id="f-ig" placeholder="مثال: rathib.club">
+            </div>
+            <div class="field">
+              <label class="field-label" data-i18n="s2_site">الموقع الإلكتروني</label>
+              <input class="field-input" type="text" id="f-website" placeholder="www.example.com">
+            </div>
+          </div>
+          <div class="form-nav">
+            <button class="btn-form-back" onclick="prevStep(2)">← <span data-i18n="btn_back">رجوع</span></button>
+            <button class="btn-form-next" onclick="nextStep(2)"><span data-i18n="btn_next">التالي</span> →</button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="form-step" id="step-3">
+          <div class="step-title" data-i18n="s3_title">الإيرادات الحالية</div>
+          <p class="step-desc" data-i18n="s3_sub">هذه المعلومات سرية تماماً وتساعدنا نحدد الفرص الحقيقية</p>
+          <div class="field">
+            <label class="field-label"><span data-i18n="s3_rev">متوسط المبيعات الشهرية الحالية</span> <em>*</em></label>
+            <div class="radio-group" id="rad-revenue">
+              <label class="radio-label"><input type="radio" name="revenue" value="under300K"><div class="radio-dot"></div><span data-i18n="rev_1">أقل من 300,000 جنيه</span></label>
+              <label class="radio-label"><input type="radio" name="revenue" value="300K-700K"><div class="radio-dot"></div><span data-i18n="rev_2">300,000 — 700,000 جنيه</span></label>
+              <label class="radio-label"><input type="radio" name="revenue" value="700K-1.5M"><div class="radio-dot"></div><span data-i18n="rev_3">700,000 — 1.5 مليون</span></label>
+              <label class="radio-label"><input type="radio" name="revenue" value="1.5M-5M"><div class="radio-dot"></div><span data-i18n="rev_4">1.5 مليون — 5 مليون</span></label>
+              <label class="radio-label"><input type="radio" name="revenue" value="5M+"><div class="radio-dot"></div><span data-i18n="rev_5">أكثر من 5 مليون</span></label>
+            </div>
+          </div>
+          <div class="field-grid">
+            <div class="field">
+              <label class="field-label" data-i18n="s3_orders">متوسط الطلبات شهرياً</label>
+              <input class="field-input" type="number" id="f-orders" data-i18n-ph="s3_orders_ph" placeholder="عدد تقريبي">
+            </div>
+            <div class="field">
+              <label class="field-label" data-i18n="s3_aov">متوسط قيمة الطلب (جنيه)</label>
+              <input class="field-input" type="number" id="f-aov" placeholder="250">
+            </div>
+          </div>
+          <div class="field">
+            <label class="field-label" data-i18n="s3_target">الإيراد الشهري المستهدف</label>
+            <input class="field-input" type="text" id="f-goal" data-i18n-ph="s3_target_ph" placeholder="مثال: 2 مليون جنيه">
+          </div>
+          <div class="form-nav">
+            <button class="btn-form-back" onclick="prevStep(3)">← <span data-i18n="btn_back">رجوع</span></button>
+            <button class="btn-form-next" onclick="nextStep(3)"><span data-i18n="btn_next">التالي</span> →</button>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="form-step" id="step-4">
+          <div class="step-title" data-i18n="s4_title">ابدأ تقييم نظام النمو الخاص بشركتك</div>
+          <p class="step-desc" data-i18n="s4_sub">أجب عن 3 أسئلة فقط لنكتشف معًا أين توجد أكبر فرصة لزيادة الإيرادات وتحسين كفاءة التسويق.</p>
+
+          <!-- Q1: monthly marketing investment -->
+          <div class="field">
+            <label class="field-label" data-i18n="s4_q1">كم تستثمر شهريًا في التسويق؟</label>
+            <div class="radio-group" id="rad-spend">
+              <label class="radio-label"><input type="radio" name="mkt_spend" value="under250K"><div class="radio-dot"></div><span data-i18n="spend_1">أقل من 250,000 جنيه</span></label>
+              <label class="radio-label"><input type="radio" name="mkt_spend" value="250K-500K"><div class="radio-dot"></div><span data-i18n="spend_2">250,000 — 500,000 جنيه</span></label>
+              <label class="radio-label"><input type="radio" name="mkt_spend" value="500K-1M"><div class="radio-dot"></div><span data-i18n="spend_3">500,000 — 1,000,000 جنيه</span></label>
+              <label class="radio-label"><input type="radio" name="mkt_spend" value="1M+"><div class="radio-dot"></div><span data-i18n="spend_4">أكثر من 1,000,000 جنيه</span></label>
+            </div>
+          </div>
+
+          <!-- Q2: CAC awareness -->
+          <div class="field">
+            <label class="field-label" data-i18n="s4_q2">هل تعرف تكلفة اكتساب العميل (CAC) الخاصة بك؟</label>
+            <div class="radio-group" id="rad-cac">
+              <label class="radio-label"><input type="radio" name="cac_know" value="track"><div class="radio-dot"></div><span data-i18n="cac_1">نعم، وأتابعها باستمرار</span></label>
+              <label class="radio-label"><input type="radio" name="cac_know" value="approx"><div class="radio-dot"></div><span data-i18n="cac_2">لديّ رقم تقريبي</span></label>
+              <label class="radio-label"><input type="radio" name="cac_know" value="no"><div class="radio-dot"></div><span data-i18n="cac_3">لا أعرفها</span></label>
+            </div>
+          </div>
+
+          <!-- Q3: net profit awareness -->
+          <div class="field">
+            <label class="field-label" data-i18n="s4_q3">هل تعرف صافي الربح الحقيقي بعد جميع التكاليف؟</label>
+            <div class="radio-group" id="rad-profit">
+              <label class="radio-label"><input type="radio" name="profit_know" value="yes"><div class="radio-dot"></div><span data-i18n="profit_1">نعم</span></label>
+              <label class="radio-label"><input type="radio" name="profit_know" value="approx"><div class="radio-dot"></div><span data-i18n="profit_2">أعرفه بشكل تقريبي</span></label>
+              <label class="radio-label"><input type="radio" name="profit_know" value="no"><div class="radio-dot"></div><span data-i18n="profit_3">لا</span></label>
+            </div>
+          </div>
+
+          <!-- Smart insight message (revealed after answering Q2/Q3) -->
+          <div id="s4-smart-msg" class="smart-msg" style="display:none;">
+            <span class="smart-msg-icon">⚠</span>
+            <span data-i18n="s4_smart">إذا لم تكن تعرف الـ CAC أو صافي الربح الحقيقي، فمن المحتمل أنك تتخذ قرارات تسويقية اعتمادًا على بيانات غير مكتملة — وهو أحد أكثر أسباب تباطؤ النمو شيوعًا لدى الشركات.</span>
+          </div>
+
+          <div class="field">
+            <label class="field-label" data-i18n="s4_who">من يتولى التسويق الآن؟</label>
+            <div class="radio-group" id="rad-mkt">
+              <label class="radio-label"><input type="radio" name="mkt_who" value="agency"><div class="radio-dot"></div><span data-i18n="mkt_1">وكالة تسويق خارجية</span></label>
+              <label class="radio-label"><input type="radio" name="mkt_who" value="inhouse"><div class="radio-dot"></div><span data-i18n="mkt_2">فريق داخلي</span></label>
+              <label class="radio-label"><input type="radio" name="mkt_who" value="freelancer"><div class="radio-dot"></div><span data-i18n="mkt_3">فريلانسر أو مستقل</span></label>
+              <label class="radio-label"><input type="radio" name="mkt_who" value="none"><div class="radio-dot"></div><span data-i18n="mkt_4">لا يوجد دعم تسويقي</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field-label" data-i18n="s4_challenge">أكبر تحدٍّ في التسويق حالياً</label>
+            <textarea class="field-textarea" id="f-challenge" data-i18n-ph="s4_challenge_ph" placeholder="اكتب بحرية — هذا يساعدنا نفهم وضعك الحقيقي..."></textarea>
+          </div>
+          <div class="form-nav">
+            <button class="btn-form-back" onclick="prevStep(4)">← <span data-i18n="btn_back">رجوع</span></button>
+            <button class="btn-form-next" onclick="nextStep(4)"><span data-i18n="btn_next">التالي</span> →</button>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="form-step" id="step-5">
+          <div class="step-title" data-i18n="s5_title">منظومة المبيعات</div>
+          <p class="step-desc" data-i18n="s5_sub">التسويق الجيد بحاجة لمنظومة مبيعات تكمله</p>
+          <div class="field">
+            <label class="field-label" data-i18n="s5_sales_team">هل لديك فريق مبيعات؟</label>
+            <div class="radio-group" id="rad-sales">
+              <label class="radio-label"><input type="radio" name="has_sales" value="full"><div class="radio-dot"></div><span data-i18n="sales_1">نعم، فريق مبيعات متكامل</span></label>
+              <label class="radio-label"><input type="radio" name="has_sales" value="small"><div class="radio-dot"></div><span data-i18n="sales_2">شخص أو اثنان فقط</span></label>
+              <label class="radio-label"><input type="radio" name="has_sales" value="myself"><div class="radio-dot"></div><span data-i18n="sales_3">أنا شخصياً من يتابع المبيعات</span></label>
+              <label class="radio-label"><input type="radio" name="has_sales" value="none"><div class="radio-dot"></div><span data-i18n="sales_4">لا يوجد فريق مبيعات</span></label>
+            </div>
+          </div>
+          <div class="field-grid">
+            <div class="field">
+              <label class="field-label" data-i18n="s5_leads">كم ليد تستقبل شهرياً؟</label>
+              <input class="field-input" type="number" id="f-leads" placeholder="500">
+            </div>
+            <div class="field">
+              <label class="field-label" data-i18n="s5_conv">معدل التحويل (%)</label>
+              <input class="field-input" type="number" id="f-conv" placeholder="15">
+            </div>
+          </div>
+          <div class="field">
+            <label class="field-label" data-i18n="s5_crm">هل لديك CRM أو نظام لمتابعة العملاء؟</label>
+            <div class="radio-group" id="rad-crm">
+              <label class="radio-label"><input type="radio" name="crm" value="yes"><div class="radio-dot"></div><span data-i18n="crm_1">نعم</span></label>
+              <label class="radio-label"><input type="radio" name="crm" value="no"><div class="radio-dot"></div><span data-i18n="crm_2">لا</span></label>
+              <label class="radio-label"><input type="radio" name="crm" value="sheets"><div class="radio-dot"></div><span data-i18n="crm_3">Excel / Google Sheets</span></label>
+            </div>
+          </div>
+          <div class="form-nav">
+            <button class="btn-form-back" onclick="prevStep(5)">← <span data-i18n="btn_back">رجوع</span></button>
+            <button class="btn-form-next" onclick="nextStep(5)"><span data-i18n="btn_next">التالي</span> →</button>
+          </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="form-step" id="step-6">
+          <div class="step-title" data-i18n="s6_title">الموقع والتتبع</div>
+          <p class="step-desc" data-i18n="s6_sub">نفهم بنيتك التقنية الحالية لنحدد الفجوات</p>
+          <div class="field">
+            <label class="field-label" data-i18n="s6_site">هل لديك موقع إلكتروني؟</label>
+            <div class="radio-group" id="rad-site">
+              <label class="radio-label"><input type="radio" name="has_site" value="yes-good"><div class="radio-dot"></div><span data-i18n="site_1">نعم، موقع احترافي يعمل بكفاءة</span></label>
+              <label class="radio-label"><input type="radio" name="has_site" value="yes-bad"><div class="radio-dot"></div><span data-i18n="site_2">نعم، لكنه يحتاج تحسين</span></label>
+              <label class="radio-label"><input type="radio" name="has_site" value="no"><div class="radio-dot"></div><span data-i18n="site_3">لا يوجد موقع</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field-label" data-i18n="s6_tracking">أدوات التتبع المُثبّتة <span style="font-size:11px; color:var(--text-3)" data-i18n="multi_select">(اختيار متعدد)</span></label>
+            <div class="check-group" id="chk-tracking">
+              <label class="check-label"><input type="checkbox" value="GA4"><div class="check-box">✓</div>Google Analytics 4</label>
+              <label class="check-label"><input type="checkbox" value="Meta Pixel"><div class="check-box">✓</div>Meta Pixel</label>
+              <label class="check-label"><input type="checkbox" value="TikTok Pixel"><div class="check-box">✓</div>TikTok Pixel</label>
+              <label class="check-label"><input type="checkbox" value="none"><div class="check-box">✓</div><span data-i18n="tracking_none">لا يوجد تتبع</span></label>
+            </div>
+          </div>
+          <div class="form-nav">
+            <button class="btn-form-back" onclick="prevStep(6)">← <span data-i18n="btn_back">رجوع</span></button>
+            <button class="btn-form-next" onclick="nextStep(6)"><span data-i18n="btn_next">التالي</span> →</button>
+          </div>
+        </div>
+
+        <!-- Step 7 -->
+        <div class="form-step" id="step-7">
+          <div class="step-title" data-i18n="s7_title">أكبر التحديات</div>
+          <p class="step-desc" data-i18n="s7_sub">اختر أهم 3 تحديات تواجهها في بزنسك الآن</p>
+          <div class="field">
+            <label class="field-label"><span data-i18n="s7_pick">اختر ما ينطبق عليك</span> <span style="font-size:11px; color:var(--text-3)" data-i18n="max3">(حتى 3)</span></label>
+            <div class="check-group" id="chk-challenges">
+              <label class="check-label"><input type="checkbox" value="sales"><div class="check-box">✓</div><span data-i18n="ch_1">زيادة المبيعات</span></label>
+              <label class="check-label"><input type="checkbox" value="awareness"><div class="check-box">✓</div><span data-i18n="ch_2">الوعي بالبراند</span></label>
+              <label class="check-label"><input type="checkbox" value="content"><div class="check-box">✓</div><span data-i18n="ch_3">جودة المحتوى</span></label>
+              <label class="check-label"><input type="checkbox" value="ads"><div class="check-box">✓</div><span data-i18n="ch_4">كفاءة الإعلانات</span></label>
+              <label class="check-label"><input type="checkbox" value="website"><div class="check-box">✓</div><span data-i18n="ch_5">الموقع ومعدل التحويل</span></label>
+              <label class="check-label"><input type="checkbox" value="retention"><div class="check-box">✓</div><span data-i18n="ch_6">الاحتفاظ بالعملاء</span></label>
+              <label class="check-label"><input type="checkbox" value="expansion"><div class="check-box">✓</div><span data-i18n="ch_7">التوسع وفتح فروع</span></label>
+              <label class="check-label"><input type="checkbox" value="data"><div class="check-box">✓</div><span data-i18n="ch_8">البيانات والقياس</span></label>
+              <label class="check-label"><input type="checkbox" value="identity"><div class="check-box">✓</div><span data-i18n="ch_9">الهوية البصرية</span></label>
+              <label class="check-label"><input type="checkbox" value="team"><div class="check-box">✓</div><span data-i18n="ch_10">بناء فريق التسويق</span></label>
+            </div>
+          </div>
+          <div class="form-nav">
+            <button class="btn-form-back" onclick="prevStep(7)">← <span data-i18n="btn_back">رجوع</span></button>
+            <button class="btn-form-next" onclick="nextStep(7)"><span data-i18n="btn_next">التالي</span> →</button>
+          </div>
+        </div>
+
+        <!-- Step 8 -->
+        <div class="form-step" id="step-8">
+          <div class="step-title" data-i18n="s8_title">أهداف النمو</div>
+          <p class="step-desc" data-i18n="s8_sub">نريد أن نفهم أين تريد أن تكون — لا أين أنت الآن</p>
+          <div class="field">
+            <label class="field-label" data-i18n="s8_target">ما الإيراد الشهري الذي تريد تحقيقه في 12 شهر؟</label>
+            <input class="field-input" type="text" id="f-target" data-i18n-ph="s8_target_ph" placeholder="مثال: 3 مليون جنيه">
+          </div>
+          <div class="field">
+            <label class="field-label" data-i18n="s8_expand">هل تخطط لفتح فروع جديدة؟</label>
+            <div class="radio-group" id="rad-expand">
+              <label class="radio-label"><input type="radio" name="expand" value="6m"><div class="radio-dot"></div><span data-i18n="exp_1">نعم، خلال 6 أشهر</span></label>
+              <label class="radio-label"><input type="radio" name="expand" value="1y"><div class="radio-dot"></div><span data-i18n="exp_2">نعم، خلال سنة</span></label>
+              <label class="radio-label"><input type="radio" name="expand" value="no"><div class="radio-dot"></div><span data-i18n="exp_3">لا، التركيز على الفروع الحالية</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field-label" data-i18n="s8_why">لماذا لم تصل لهدفك حتى الآن؟</label>
+            <textarea class="field-textarea" id="f-why" data-i18n-ph="s8_why_ph" placeholder="كن صريحاً — هذه الإجابة هي أهم معلومة تعطينا إياها..."></textarea>
+          </div>
+          <div class="form-nav">
+            <button class="btn-form-back" onclick="prevStep(8)">← <span data-i18n="btn_back">رجوع</span></button>
+            <button class="btn-form-next" onclick="nextStep(8)"><span data-i18n="btn_next">التالي</span> →</button>
+          </div>
+        </div>
+
+        <!-- Step 9 -->
+        <div class="form-step" id="step-9">
+          <div class="step-title" data-i18n="s9_title">جاهزية القرار</div>
+          <p class="step-desc" data-i18n="s9_sub">سؤال أخير — والأهم من وجهة نظرنا</p>
+          <div class="field">
+            <label class="field-label" data-i18n="s9_dm">من صانع القرار في التسويق؟</label>
+            <div class="radio-group" id="rad-dm">
+              <label class="radio-label"><input type="radio" name="dm" value="me"><div class="radio-dot"></div><span data-i18n="dm_1">أنا شخصياً (صاحب البزنس)</span></label>
+              <label class="radio-label"><input type="radio" name="dm" value="partner"><div class="radio-dot"></div><span data-i18n="dm_2">أنا وشريكي معاً</span></label>
+              <label class="radio-label"><input type="radio" name="dm" value="director"><div class="radio-dot"></div><span data-i18n="dm_3">مدير التسويق</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field-label" data-i18n="s9_timing">متى تريد أن تبدأ؟</label>
+            <div class="radio-group" id="rad-timing">
+              <label class="radio-label"><input type="radio" name="timing" value="now"><div class="radio-dot"></div><span data-i18n="t_1">فوراً — جاهز للانطلاق</span></label>
+              <label class="radio-label"><input type="radio" name="timing" value="30d"><div class="radio-dot"></div><span data-i18n="t_2">خلال 30 يوم</span></label>
+              <label class="radio-label"><input type="radio" name="timing" value="90d"><div class="radio-dot"></div><span data-i18n="t_3">خلال 90 يوم</span></label>
+              <label class="radio-label"><input type="radio" name="timing" value="research"><div class="radio-dot"></div><span data-i18n="t_4">في مرحلة البحث والمقارنة</span></label>
+            </div>
+          </div>
+          <div class="field highlight-area">
+            <label class="field-label" data-i18n="s9_q_label">السؤال الأهم</label>
+            <p class="step-desc" data-i18n="s9_q_sub">لو راثيب ساعدك تزيد إيراداتك 30% في الـ 12 شهر القادمة — ماذا سيتغير في بزنسك وفي حياتك؟</p>
+            <textarea class="field-textarea" id="f-final" data-i18n-ph="s9_final_ph" placeholder="اكتب بصراحة كاملة — هذه الإجابة تعطينا صورة حقيقية عن طموحك..."></textarea>
+          </div>
+          <div class="form-nav">
+            <button class="btn-form-back" onclick="prevStep(9)">← <span data-i18n="btn_back">رجوع</span></button>
+            <button class="btn-form-submit" id="btn-submit" onclick="handleSubmit()"><span data-i18n="btn_submit">إرسال وحجز المكالمة</span></button>
+          </div>
+        </div>
+
+      </div><!-- /form-body -->
+    </div><!-- /form-container -->
+  </div>
+</section>
+
+<!-- ═══════════════════ PORTFOLIO -->
+<section class="portfolio-section section" id="portfolio">
+  <div class="container">
+    <div class="portfolio-head reveal">
+      <div>
+        <div class="section-label" data-i18n="port_label">الأعمال</div>
+        <h2 class="section-heading" data-i18n="port_title">أعمالنا <span>المميزة</span></h2>
+      </div>
+    </div>
+    <div class="portfolio-grid reveal reveal-delay-1">
+      <a class="portfolio-card" href="#form-section">
+        <div class="portfolio-img"><img src="images/RATHIB_files/1-Cs9NBNXL.webp" alt="DHG Sports Academy" loading="lazy"></div>
+        <h3 class="portfolio-name">DHG Sports Academy</h3>
+        <p class="portfolio-client">DMG Group</p>
+      </a>
+      <a class="portfolio-card" href="#form-section">
+        <div class="portfolio-img"><img src="images/RATHIB_files/1-DARS6Ava.webp" alt="Swipe Right" loading="lazy"></div>
+        <h3 class="portfolio-name">Swipe Right</h3>
+        <p class="portfolio-client">Global Finance Group</p>
+      </a>
+      <a class="portfolio-card" href="#form-section">
+        <div class="portfolio-img"><img src="images/RATHIB_files/1-Byf1dByk.webp" alt="Mcocco" loading="lazy"></div>
+        <h3 class="portfolio-name">Mcocco</h3>
+        <p class="portfolio-client">Mcocco Group</p>
+      </a>
+      <a class="portfolio-card" href="#form-section">
+        <div class="portfolio-img"><img src="images/RATHIB_files/1-Dqb-Qijo.webp" alt="Rathib Identity" loading="lazy"></div>
+        <h3 class="portfolio-name">Rathib Identity</h3>
+        <p class="portfolio-client">Fashion Forward Co.</p>
+      </a>
+      <a class="portfolio-card" href="#form-section">
+        <div class="portfolio-img"><img src="images/RATHIB_files/1-BZAjPrR4.webp" alt="Marketing" loading="lazy"></div>
+        <h3 class="portfolio-name">Marketing</h3>
+        <p class="portfolio-client">DMG Group</p>
+      </a>
+      <a class="portfolio-card" href="#form-section">
+        <div class="portfolio-img"><img src="images/RATHIB_files/11-XDCEDvLm.webp" alt="Marketing" loading="lazy"></div>
+        <h3 class="portfolio-name">Marketing</h3>
+        <p class="portfolio-client">DMG Group</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CONSULTATION CTA -->
+<section class="consult-section section" id="consult">
+  <div class="container">
+    <div class="consult-inner reveal">
+      <div class="consult-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg>
+        <span data-i18n="consult_badge">استشارة مجانية</span>
+      </div>
+      <h2 class="section-heading" data-i18n="consult_title">احجز <span>استشارة مجانية</span> الآن</h2>
+      <p class="section-subtext" data-i18n="consult_sub">هل أنت مستعد لتطوير علامتك التجارية؟ دعنا نناقش رؤيتك ونبني استراتيجية مخصصة تحقق نتائج حقيقية.</p>
+      <a href="#form-section" class="btn btn-primary btn-lg consult-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
+        <span data-i18n="consult_btn">احجز استشارة مجانية</span>
+      </a>
+      <div class="consult-contacts">
+        <a href="https://wa.me/971503110244" target="_blank" rel="noopener noreferrer" class="consult-contact">
+          <span class="consult-contact-ic">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </span>
+          <span dir="ltr">+971503110244</span>
+        </a>
+        <a href="mailto:rathib.uae@gmail.com" class="consult-contact">
+          <span class="consult-contact-ic">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+          </span>
+          <span dir="ltr">rathib.uae@gmail.com</span>
+        </a>
+      </div>
+      <p class="consult-note" data-i18n="consult_note">✓ بدون التزام ✓ رد خلال 24 ساعة ✓ استشارة من خبراء</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-logo-wrap">
+        <div class="footer-logo"><img src="images/rathib-logo-3d-BRIiutFj.webp" alt="راثيب" class="footer-logo-img"></div>
+        <p class="footer-tagline" data-i18n="footer_tag">شريك هندسة الإيراد — نبني أنظمة نمو تحوّل الإنفاق التسويقي إلى إيراد قابل للقياس.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#problem" data-i18n="nav_problem">المشكلة</a>
+        <a href="#framework" data-i18n="nav_framework">المنهجية</a>
+        <a href="#industries" data-i18n="nav_ind">القطاعات</a>
+        <a href="#proof" data-i18n="nav_proof">النتائج</a>
+        <a href="#faq" data-i18n="nav_faq">الأسئلة</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer_copy">© 2026 راثيب. جميع الحقوق محفوظة.</span>
+      <span data-i18n="footer_geo">السعودية · المغرب</span>
+      <span><span data-i18n="footer_built">بُني بـ</span> <span class="footer-gold" data-i18n="footer_method">منهجية النتيجة أولاً</span></span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Submit Loader -->
+<div class="submit-overlay" id="submit-overlay">
+  <div class="submit-spinner"></div>
+  <div class="submit-overlay-text" id="overlay-text">جاري حفظ البيانات...</div>
+  <div class="submit-overlay-sub" id="overlay-sub">لحظة من فضلك</div>
+</div>
+
+<!-- GSAP + ScrollTrigger — cross-device scroll animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script src="js/main.js"></script>
+</body>
+</html>
