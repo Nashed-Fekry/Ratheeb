@@ -948,9 +948,10 @@ document.addEventListener('keydown', e => {
 function initMediaCarousel() {
   const track = document.getElementById('mp-track');
   if (!track) return;
-  const originals = [...track.children];
+
+  // Only clone the non-hidden originals to avoid double-cloning on re-init
+  const originals = [...track.children].filter(c => !c.hasAttribute('aria-hidden'));
   if (!originals.length) return;
-  // Duplicate the set once so translateX(-50%) loops seamlessly
   originals.forEach(node => {
     const clone = node.cloneNode(true);
     clone.setAttribute('aria-hidden', 'true');
@@ -958,35 +959,59 @@ function initMediaCarousel() {
     track.appendChild(clone);
   });
 
-  // Touch / drag support for mobile
+  // Disable CSS animation — drive position with rAF for reliable cross-device scrolling
+  track.style.animation = 'none';
+  track.style.transform = 'translateX(0px)';
+
+  const SPEED = 0.6; // px per animation frame (~36px/s at 60fps)
+  let pos = 0;
+  let paused = false;
+
+  function tick() {
+    if (!paused) {
+      const half = track.scrollWidth / 2;
+      if (half > 0) {
+        pos -= SPEED;
+        if (pos <= -half) pos += half;
+        track.style.transform = `translateX(${pos}px)`;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
   const wrap = track.parentElement;
-  let tsX = 0, txStart = 0;
+
+  // Pause on hover — desktop only
+  wrap.addEventListener('mouseenter', () => { paused = true; });
+  wrap.addEventListener('mouseleave', () => { paused = false; });
+
+  // Touch drag — only engage when swipe is primarily horizontal
+  let touchStartX = 0, touchStartY = 0, posAtTouch = 0, isDragging = false;
 
   wrap.addEventListener('touchstart', e => {
-    tsX = e.touches[0].clientX;
-    const mat = new DOMMatrix(getComputedStyle(track).transform);
-    txStart = mat.m41;
-    track.style.animation = 'none';
-    track.style.transform = `translateX(${txStart}px)`;
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    posAtTouch = pos;
+    isDragging = false;
   }, { passive: true });
 
   wrap.addEventListener('touchmove', e => {
-    const dx = e.touches[0].clientX - tsX;
+    const dx = e.touches[0].clientX - touchStartX;
+    const dy = e.touches[0].clientY - touchStartY;
+    if (!isDragging && Math.abs(dy) > Math.abs(dx)) return; // vertical scroll — leave alone
+    isDragging = true;
+    paused = true;
     const half = track.scrollWidth / 2;
-    let tx = txStart + dx;
-    if (tx > 0) tx -= half;
-    if (tx < -half) tx += half;
-    track.style.transform = `translateX(${tx}px)`;
+    pos = posAtTouch + dx;
+    if (pos > 0) pos -= half;
+    if (pos < -half) pos += half;
+    track.style.transform = `translateX(${pos}px)`;
   }, { passive: true });
 
   wrap.addEventListener('touchend', () => {
-    const mat = new DOMMatrix(getComputedStyle(track).transform);
-    const tx = mat.m41;
-    const half = track.scrollWidth / 2;
-    const progress = Math.abs(tx) / half;
-    const delay = -(progress * 60);
-    track.style.transform = '';
-    track.style.animation = `mpScroll 60s linear ${delay}s infinite`;
+    isDragging = false;
+    paused = false; // resume auto-scroll from wherever the user left off
   }, { passive: true });
 }
 

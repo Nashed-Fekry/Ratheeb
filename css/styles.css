@@ -1146,16 +1146,7 @@ body.light .social-rail-btn {
 .mp-marquee-track {
   display: flex;
   width: max-content;
-  animation: mpScroll 60s linear infinite;
   will-change: transform;
-  backface-visibility: hidden;
-}
-@media (hover: hover) {
-  .mp-marquee:hover .mp-marquee-track { animation-play-state: paused; }
-}
-@keyframes mpScroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
 }
 .mp-slide {
   flex: 0 0 auto;
