@@ -241,7 +241,7 @@ const I = {
     s3_aov:'Avg. Order Value (EGP)', s3_target:'Target Monthly Revenue', s3_target_ph:'e.g. 2 Million EGP',
     rev_1:'Under 300,000 EGP', rev_2:'300,000 — 700,000 EGP', rev_3:'700,000 — 1.5M EGP',
     rev_4:'1.5M — 5M EGP', rev_5:'Over 5M EGP',
-    s4_title:'Start Your Company’s Growth-System Assessment',
+    s4_title:"Start Your Company’s Growth-System Assessment",
     s4_sub:'Answer just 3 questions so we can discover together where your biggest opportunity to grow revenue and improve marketing efficiency is.',
     s4_q1:'How much do you invest in marketing monthly?',
     spend_1:'Less than 250,000 EGP', spend_2:'250,000 — 500,000 EGP', spend_3:'500,000 — 1,000,000 EGP', spend_4:'More than 1,000,000 EGP',
